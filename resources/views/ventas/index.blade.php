@@ -28,6 +28,8 @@
   <div class="d-flex flex-column">
 
     <div class="profile">
+
+
       <br>
     <a class=" text-light" href="/"><h1>MercaAqui</h1></a>
     <a href="/admin"> <img src="https://cdn-icons.flaticon.com/png/512/3361/premium/3361342.png?token=exp=1650467023~hmac=b36b32568330bf8ca22fa084799b2e78"></a>

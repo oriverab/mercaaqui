@@ -14,7 +14,7 @@
             @csrf
 
             <div class="divider d-flex align-text-center my-4">
-               <h1 class="text-center" fw-bold mx-3 mb-0> FORMULARIO PRODUCTOS</h1>     
+               <h1 class="text-center" fw-bold mx-3 mb-0> FORMULARIO STEFY</h1>     
              
           </div>
          
