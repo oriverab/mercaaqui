@@ -57,7 +57,7 @@
     <div class="profile">
       <br>
     <a class=" text-light" href="/admin"><h1>MercaAqui</h1></a>
-    <a href="/admin"> <img src="https://cdn-icons.flaticon.com/png/512/3361/premium/3361342.png?token=exp=1650467023~hmac=b36b32568330bf8ca22fa084799b2e78"></a>
+    <a href="/admin"> <img src="https://cdn-icons.flaticon.com/png/512/3361/premium/3361342.png?token=exp=1650638887~hmac=c5676ca66ea9871ce186562b4be68f23"></a>
                           <div>
                             <h4 class="text-center">
                             @guest    
@@ -85,7 +85,7 @@
     <nav id="navbar" class="nav-menu navbar">
       <ul>
         <li><a href="#inicio" class="nav-link scrollto active"><img src="https://cdn-icons-png.flaticon.com/512/553/553416.png" width="25" height="25"> <span>Home</span></a></li>
-        <li><a href="#Panel-Vendedores" class="nav-link active"><img src="https://cdn-icons.flaticon.com/png/512/560/premium/560207.png?token=exp=1650467519~hmac=ef7bb9335740466e23bf98db044ac46c"width="25" height="25"><span>Vendedores</span></a></li>
+        <li><a href="#Panel-Vendedores" class="nav-link active"><img src="https://cdn-icons.flaticon.com/png/512/560/premium/560207.png?token=exp=1650640397~hmac=b8b36c9bb94b1176e249f768f5ece417"width="25" height="25"><span>Vendedores</span></a></li>
         <li><a href="#Panel-Productos" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/1524/1524855.png"width="25" height="25"><span>Productos</span></a></li>
         <li><a href="#Panel-ventas" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"width="25" height="25"><span>Ventas</span></a></li>
         <li><a href="#contact" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/3447/3447687.png"width="25" height="25"><span>Contact</span></a></li>
@@ -97,7 +97,93 @@
 <!-- ======= Hero Section ======= -->
 <section id="inicio" class="d-flex flex-column justify-content-center align-items-center">
   <div class="inicio-container" data-aos="fade-in">
-    <h1>MercaAqui </h1>
+  <div class='console-container'>
+<span id='text'></span>
+ <div class='console-underscore' id='console'><img src="https://cdn-icons-png.flaticon.com/512/3082/3082031.png" height="75px" width="75px" ></div>
+ </div>
+<style>
+ .hidden {
+ opacity:0;
+}
+.console-container {
+ font-family:arial;
+ font-size:6em;
+ text-align:center;
+ height:30px;
+ width:600px;
+ display:inline;
+ position:relative;
+ color:black;
+ top:0;
+ bottom:0;
+ left:10px;
+ right:0;
+ margin:auto;
+}
+.console-underscore {
+ display:inline-block;
+ position:relative;
+ left:10px;
+ 
+}
+ 
+@media (max-width: 750px) {
+ .console-container { font-size:2em; }
+}
+</style>
+
+<script>
+    // function([string1, string2],target id,[color1,color2])
+ consoleText(['MercaAqui'], 'text',['#ffffff']);
+ function consoleText(words, id, colors) {
+  if (colors === undefined) colors = ['#fff'];
+  var visible = true;
+  var con = document.getElementById('console');
+  var letterCount = 1;
+  var x = 1;
+  var waiting = false;
+  var target = document.getElementById(id)
+  target.setAttribute('style', 'color:' + colors[0])
+  window.setInterval(function() {
+  
+  if (letterCount === 0 && waiting === false) {
+  waiting = true;
+  target.innerHTML = words[0].substring(0, letterCount)
+  window.setTimeout(function() {
+  var usedColor = colors.shift();
+  colors.push(usedColor);
+  var usedWord = words.shift();
+  words.push(usedWord);
+  x = 1;
+  target.setAttribute('style', 'color:' + colors[0])
+  letterCount += x;
+  waiting = false;
+  }, 1000)
+  } else if (letterCount === words[0].length + 1 && waiting === false) {
+  waiting = true;
+  window.setTimeout(function() {
+  x = -1;
+  letterCount += x;
+  waiting = false;
+  }, 1000)
+  } else if (waiting === false) {
+  target.innerHTML = words[0].substring(0, letterCount)
+  letterCount += x;
+  }
+  }, 120)
+  window.setInterval(function() {
+  if (visible === true) {
+  con.className = 'console-underscore hidden'
+  visible = false;
+  
+  } else {
+  con.className = 'console-underscore'
+  
+  visible = true;
+  }
+  }, 400)
+ }
+</script>
   </div>
 </section>
 
