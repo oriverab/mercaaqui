@@ -54,9 +54,9 @@ class vendedorcontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(vendedor $vendedor,$id)
+    public function show()
     {
-        return view('/vendedor.show',['vendedor'=>$vendedor::find($id)] ); 
+        return view('/vendedor.show'); 
 
     }
 

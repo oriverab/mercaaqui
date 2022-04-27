@@ -25,7 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/admin', Admincontroller::class);
 
-
 Route::resource('/ventas', ventascontroller::class);
 
 Auth::routes(); 
@@ -37,6 +36,8 @@ route::get('/vendedor/create',[\App\Http\Controllers\vendedorcontroller::class, 
 route::post('/vendedor/{id}',[\App\Http\Controllers\vendedorcontroller::class,'update']);
 route::get('/vendedor/edit/{id}',[\App\Http\Controllers\vendedorcontroller::class,'edit']);
 route::post('/vendedor/store/{id}',[\App\Http\Controllers\vendedorcontroller::class,'store']);
+
+route::post('/vendedor/show',[\App\Http\Controllers\vendedorcontroller::class,'show']);
 
 route::get('/productos/edit/{id}',[\App\Http\Controllers\productoscontroller::class,'edit']);
 
