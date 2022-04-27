@@ -19,6 +19,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -81,35 +82,32 @@
 
   <main id="main">
 <br>
-<div class="container text-light bg-dark col-sm-12 col-form-label fst-italic">
-<div class="row">
-    <div class="col">
-      <h1 class="text-center text-light">Vendedores</h1>
-         <hr>
-            </div>
-              </div>
-<div class="row"> 
-  <div class="col">
-  <table id="tablita" class="table table-info table-hover">
-            <tr class="text-center"> 
-                  <th></th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Cedula </th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Telefono</th>
-                  <th scope="col"></th>
-                  <th scope="col">Acciones</th>
-                  
-                </tr>
-              @foreach($vendedor as $vendedor)
-              <tr>
-                <td> <img src="https://cdn-icons-png.flaticon.com/512/3659/3659786.png" alt="" width="50" height="50"> </td>
-              <td>{{$vendedor->nombre}}</td>
-              <td>{{$vendedor->cedula}}</td>
-              <td>{{$vendedor->email}}</td>
-              <td>{{$vendedor->telefono}}</td>
-             
-              
+
+
+<table id="ExportDataTable" class="table table-striped table-hover table-bordered" cellspacing="0" width="100%">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Cedula</th>
+			<th>Email </th>
+			<th>Telefono</th>
+      <th>Acciones</th>
+      <th>Acciones</th>
+
+		</tr>
+	</thead>
+  @foreach($vendedor as $vendedor)
+	<tbody>
+		<tr>
+			<td>{{$vendedor->nombre}}</td>
+			<td>{{$vendedor->cedula}}</td>
+			<td>{{$vendedor->email}}</td>
+			<td>{{$vendedor->telefono}}</td>
+		
+
+
+
+
 <td><a href="/vendedor/edit/{{$vendedor->id}}" > <img src="https://cdn-icons-png.flaticon.com/512/588/588395.png" width="30" height="30"></a></td>
      <td>      
  <form action="/vendedor/{{$vendedor->id}}" class="formulario-eliminar" method="POST">
@@ -122,6 +120,7 @@
 </tr>
 
 
+</tbody>
 
               @endforeach
             
@@ -132,8 +131,7 @@
   <button><img src="https://cdn-icons-png.flaticon.com/512/61/61022.png" width="20" height="20"></button></a>
 @endcan
            
-</div>
-      </div>
+
     </section>
 
     @else
@@ -169,7 +167,8 @@
     return false;
   } 
   } 
+  </script>
 
-</script>
+
 @endsection 
 
