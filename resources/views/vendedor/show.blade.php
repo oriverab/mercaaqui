@@ -1,44 +1,79 @@
-@extends('layouts.estructura')
-@section('content')
-  <section class="vh-100">
-  <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://cdn2.cocinadelirante.com/sites/default/files/images/2017/10/supermercado.jpg" class="img-fluid">
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-6 offset-xl-1">
-     
-      <form action="/productos/{{$productos->id}}" method="POST"> 
-@csrf     
-@method('put')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Export Data Tables</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Bootstrap DataTable -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+<!-- Bootstrap ExportDataTable -->
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.0/css/buttons.bootstrap.min.css">
+<!-- Font icons -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<!--  ExportDataTable JS -->
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.colVis.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-            <div class="divider d-flex align-text-center my-4">
-               <h1 class="text-center" fw-bold mx-3 mb-0> FORMULARIO PRODUCTOS</h1>     
-             
-          </div>
-         
-          <div class="form-outline mb-2">
-          <label for="inputEmail3">Nombre</label>    
-    <input type="text" class="form-control" name="nombre" value="{{$productos->nombre}}" placeholder="Ingresar Nombre">  
-    <label for="inputEmail3">precio del producto</label>
-    <input type="text" class="form-control" name="precio" value="{{$productos->precio}}" placeholder="Ingresar precio">
-    <label for="inputEmail3">stock</label>
-    <input type="text" class="form-control" name="stock" value="{{$productos->stock}}" placeholder="Ingresar la cantidad de productos"> 
-            </div>
+</head>
+<body>
 
-       
-              <div class="text-center text-lg-start mt-4 pt-2">
-           
-               <button type="submit" name="Enviar"  class="btn btn-primary btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Enviar</button>
-          </div>
-        </form>
+<style type="text/css">
+	
+</style>
 
-      </div>
-    </div>
-  </div>
-  <a href="/productos/"><img src="https://cdn-icons-png.flaticon.com/512/61/61022.png" width="20" height="20"></button></a>
-</section>
+<div class="container" style="padding-top:20px;">
 
-@endsection
+<table id="ExportDataTable" class="table table-striped table-hover table-bordered" cellspacing="0" width="100%">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Cedula</th>
+			<th>Email </th>
+			<th>Telefono</th>
+			<th>Acciones</th>
 
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>Free Time Learn</td>
+			<td>freetimelearn@gmail.com</td>
+			<td>90XXXX3210</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var table = $('#ExportDataTable').DataTable( {
+        lengthChange: false,
+        //buttons: [ 'copy', 'excel', 'pdf', 'print', 'colvis' ]
+		buttons: [ 'copy', 'excel', 'pdf', 'print']
+    } );
+    table.buttons().container()
+        .appendTo( '#ExportDataTable_wrapper .col-sm-6:eq(0)' );
+} );
+</script>
+
+</body>
+</html> 							
