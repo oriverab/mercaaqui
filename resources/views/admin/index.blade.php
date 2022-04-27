@@ -57,7 +57,7 @@
     <div class="profile">
       <br>
     <a class=" text-light" href="/admin"><h1>MercaAqui</h1></a>
-    <a href="/admin"> <img src="https://cdn-icons.flaticon.com/png/512/3361/premium/3361342.png?token=exp=1650638887~hmac=c5676ca66ea9871ce186562b4be68f23"></a>
+    <a href="/admin"> <img src="{{asset('img/todo/logitosuper.jpg')}}"></a>
                           <div>
                             <h4 class="text-center">
                             @guest    
@@ -84,8 +84,8 @@
 
     <nav id="navbar" class="nav-menu navbar">
       <ul>
-        <li><a href="#inicio" class="nav-link scrollto active"><img src="https://cdn-icons-png.flaticon.com/512/553/553416.png" width="25" height="25"> <span>Home</span></a></li>
-        <li><a href="#Panel-Vendedores" class="nav-link active"><img src="https://cdn-icons.flaticon.com/png/512/560/premium/560207.png?token=exp=1650640397~hmac=b8b36c9bb94b1176e249f768f5ece417"width="25" height="25"><span>Vendedores</span></a></li>
+        <li><a href="#inicio" class="nav-link scrollto active"><img  src="{{asset('img/todo/home.jpg')}}" width="25" height="25"> <span>Home</span></a></li>
+        <li><a href="#Panel-Vendedores" class="nav-link active"><img src="{{asset('img/todo/vendedor.jpg')}}" width="25" height="25"><span>Vendedores</span></a></li>
         <li><a href="#Panel-Productos" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/1524/1524855.png"width="25" height="25"><span>Productos</span></a></li>
         <li><a href="#Panel-ventas" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"width="25" height="25"><span>Ventas</span></a></li>
         <li><a href="#contact" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/3447/3447687.png"width="25" height="25"><span>Contact</span></a></li>

@@ -14,7 +14,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">{{ __('Iniciar Sesion') }}<img src="https://cdn-icons.flaticon.com/png/512/2050/premium/2050106.png?token=exp=1650632179~hmac=e877b96a47ff785742ca2ba12f077a75" width="40" height="40"></div>
+                <div class="card-header text-center"> {{ __('Iniciar Sesion') }} <img src="{{asset('img/todo/carrito.jpg')}}" width="40" height="40"> </div>
                 <div class="trans">
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
