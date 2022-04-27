@@ -71,7 +71,7 @@ $(document).ready(function() {
     <nav id="navbar" class="nav-menu navbar">
       <ul>
         <li><a href="#inicio" class="nav-link scrollto active"><img src="https://cdn-icons-png.flaticon.com/512/553/553416.png" width="25" height="25"> <span>Home</span></a></li>
-        <li><a href="/vendedores" class="nav-link active"><img src="https://cdn-icons.flaticon.com/png/512/560/premium/560207.png?token=exp=1650467519~hmac=ef7bb9335740466e23bf98db044ac46c"width="25" height="25"><span>Vendedores</span></a></li>
+        <li><a href="/vendedor" class="nav-link active"><img src="https://cdn-icons.flaticon.com/png/512/560/premium/560207.png?token=exp=1650467519~hmac=ef7bb9335740466e23bf98db044ac46c"width="25" height="25"><span>Vendedores</span></a></li>
         <li><a href="/productos" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/1524/1524855.png"width="25" height="25"><span>Productos</span></a></li>
         <li><a href="/ventas" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"width="25" height="25"><span>Ventas</span></a></li>
         <li><a href="#contact" class="nav-link active"><img src="https://cdn-icons-png.flaticon.com/512/3447/3447687.png"width="25" height="25"><span>Contact</span></a></li>
