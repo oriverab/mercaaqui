@@ -11,7 +11,6 @@
     <title>{{ config('app.name', 'MercaAqui') }}</title>
 
     <!-- Scripts -->
-  
     <link rel="icon" 
       type="image/png" 
       href="https://cdn-icons-png.flaticon.com/512/3082/3082031.png">

@@ -129,45 +129,28 @@ $(document).ready(function() {
 
 		</tr>
 	</thead>
-  @foreach($vendedor as $vendedor)
-	<tbody>
-		<tr>
-			<td>{{$vendedor->nombre}}</td>
-			<td>{{$vendedor->cedula}}</td>
-			<td>{{$vendedor->email}}</td>
-			<td>{{$vendedor->telefono}}</td>
-		
-
-
-
-
-<td><a href="/vendedor/edit/{{$vendedor->id}}" > <img src="https://cdn-icons-png.flaticon.com/512/588/588395.png" width="30" height="30"></a></td>
-     <td>      
- <form action="/vendedor/{{$vendedor->id}}" class="formulario-eliminar" method="POST">
-                           @csrf
-                           @method('delete')
-                         <button class="bg-transparent" style="border:none;"type=submit  onclick="return elimina()"> <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="30" height="30">
-</button>
-                          </form>
-</td>
-</tr>
-
-
-</tbody>
-
-              @endforeach
-            
-  </table>
-
+  <tbody>
+    @foreach($vendedor as $vendedor)
+      <tr>
+        <td>{{$vendedor->nombre}}</td>
+        <td>{{$vendedor->cedula}}</td>
+        <td>{{$vendedor->email}}</td>
+        <td>{{$vendedor->telefono}}</td>
+        <td><a href="/vendedor/edit/{{$vendedor->id}}" > <img src="https://cdn-icons-png.flaticon.com/512/588/588395.png" width="30" height="30"></a></td>
+        <td><form action="/vendedor/{{$vendedor->id}}" class="formulario-eliminar" method="POST">
+                            @csrf
+                            @method('delete')<button class="bg-transparent" style="border:none;"type=submit  onclick="return elimina()"> <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="30" height="30"></button>
+            </form></td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
   @can('veradmin')
   <a href="/admin">
   <button><img src="https://cdn-icons-png.flaticon.com/512/61/61022.png" width="20" height="20"></button></a>
-@endcan
-           
-
-    </section>
-
-    @else
+  @endcan
+</section>
+@else
 <div>
 <div class="cardE" style="position:relative;">
   <img class="card-img-top" src="https://tse1.explicit.bing.net/th?id=OIP.q9ZU62uVwoXah2_pLpAQ0wHaD4&pid=Api&P=0&w=306&h=161" width="50" height="180">
