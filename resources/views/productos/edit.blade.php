@@ -26,15 +26,8 @@
     <input type="text" class="form-control" name="stock" value="{{$productos->stock}}" placeholder="Ingresar la cantidad de productos"> 
     <label for="imagen">Imagen:</label>
       <input type="file" class="form-control" name="img">
-             
-  
      </div>
-
-    
-            </div>
-
-       
-              <div class="text-center text-lg-start mt-4 pt-2">
+             <div class="text-center text-lg-start mt-4 pt-2">
            
                <button type="submit" name="Enviar"  class="btn btn-primary btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;">Enviar</button>
