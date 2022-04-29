@@ -135,12 +135,12 @@
               <td>{{$ventas->cantidad}}</td>
               <td>{{$ventas->total}}</td>
               <td>{{$ventas->vendedor}}</td>                         
-              <td><a href="/ventas/edit/{{$ventas->id}}" ><button> <img src="https://icons.iconarchive.com/icons/custom-icon-design/pretty-office-10/256/Pencil-icon.png" width="20" height="20">editar</button></a></td>
+              <td><a href="/ventas/edit/{{$ventas->id}}" > <img src="https://cdn-icons-png.flaticon.com/512/588/588395.png" width="30" height="30"></a></td>
               @can('veradmin')
               <td> <form action="/ventas/{{$ventas->id}}" class="formulario-eliminar" method="POST">
                            @csrf
                            @method('delete')
-                           <button type=submit  onclick="return elimina()"> <img src="https://icons.iconarchive.com/icons/hopstarter/button/256/Button-Close-icon.png" width="20" height="20">eliminar</button>
+                           <button class="bg-transparent" style="border:none;" type=submit  onclick="return elimina()"> <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="30" height="30"></button>
                         </form>
                         </td>
               </tr>
