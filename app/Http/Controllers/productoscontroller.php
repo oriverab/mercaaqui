@@ -89,11 +89,12 @@ class productoscontroller extends Controller
         $productos->precio=$request->get("precio");
         $productos->stock=$request->get("stock");
         if($request->file('img') !==null){
+            
             $imagen=$request->file('img');
             $nombreimg=time().'.'.$imagen->getClientOriginalExtension();
             $destino=public_path('img/productos');
             $request->img->move($destino, $nombreimg);
-            $producto->img=$nombreimg;
+            $productos->img=$nombreimg;
         };
         $productos->save();
   

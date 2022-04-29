@@ -8,7 +8,7 @@
       </div>
       <div class="col-md-8 col-lg-6 col-xl-6 offset-xl-1">
      
-      <form action="/productos/{{$productos->id}}" method="POST"> 
+      <form action="/productos/{{$productos->id}}" method="POST" enctype="multipart/form-data"> 
 @csrf     
 @method('put')
 
