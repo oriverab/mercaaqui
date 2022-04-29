@@ -24,7 +24,11 @@
     <input type="text" class="form-control" name="precio" value="{{$productos->precio}}" placeholder="Ingresar precio">
     <label for="inputEmail3">stock</label>
     <input type="text" class="form-control" name="stock" value="{{$productos->stock}}" placeholder="Ingresar la cantidad de productos"> 
-            </div>
+    <label for="imagen">Imagen:</label>
+      <input type="file" class="form-control" name="img">
+             
+  
+     </div>
 
        
               <div class="text-center text-lg-start mt-4 pt-2">

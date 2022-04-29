@@ -6,16 +6,48 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>iPortfolio Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link rel="stylesheet" href="{{asset('css/vendedores.css')}}">
  
-  <link rel="stylesheet" href="{{asset('css/productosIndex.css')}}">
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Bootstrap DataTable -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+<!-- Bootstrap ExportDataTable -->
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.0/css/buttons.bootstrap.min.css">
+<!-- Font icons -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<!--  ExportDataTable JS -->
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.0/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        var table = $('#ExportDataTable').DataTable( {
+            lengthChange: false,
+            //buttons: [ 'copy', 'excel', 'pdf', 'print', 'colvis' ]
+        buttons: [ 'copy', 'excel', 'pdf', 'print']
+        } );
+        table.buttons().container()
+            .appendTo( '#ExportDataTable_wrapper .col-sm-6:eq(0)' );
+    } );
+</script>
 </head>
 
 <body>
@@ -85,55 +117,40 @@
 </div>
 
   <main id="main">
-<br>
-<div class="container text-light  bg-warning col-sm-12 col-form-label fst-italic">
-<div class="row">
-    <div class="col">
-      <h1 class="text-center text-light">productos</h1>
-         <hr>
-            </div>
-              </div>
-<div class="row"> 
-  <div class="col">
-  <table class="table table-info table-hover">
-            <tr class="text-center"> 
-                  <th></th>
+
+
+  <table id="ExportDataTable" class="table table-striped table-hover table-bordered" cellspacing="0" width="100%">
+          <thead>
+             <tr class="text-center"> 
+                  <th scope="col">imagen</th>
                   <th scope="col">Nombre producto</th>
                   <th scope="col">precio</th>
                   <th scope="col">existencia</th>
-                  <th scope="col"></th>
                   @can('veradmin')
                   <th scope="col">editar</th>                
                   <th scope="col">eliminar</th>
                   @endcan
                 </tr>
+        </thead>
+        <tbody>
               @foreach($productos as $productos)
               <tr>
                 <td> <img src="img/productos/{{$productos->img}}" alt="" width="50" height="50"></td>
-              <td class="text-center">{{$productos->nombre}}</td>
-              <td>{{$productos->precio}}</td>
-              <td  class="text-center">{{$productos->stock}}</td>
-          @can('veradmin')    <td> <i href="/productos/edit/{{$productos->id}}"> </i>
-            <img src="https://image.flaticon.com/icons/png/512/3786/3786276.png" width="15" height="15">
-             </td>
-           @endcan  
-             @can('veradmin')
-<td><a href="/productos/edit/{{$productos->id}}" ><img src="https://cdn-icons-png.flaticon.com/512/588/588395.png" width="30" height="30"></a></td>
-
-<td> <form action="/productos/{{$productos->id}}" class="formulario-eliminar" method="POST">
-                           @csrf
-                           @method('delete')
-                           <button class="bg-transparent" style="border:none;" type=submit  onclick="return elimina()"> <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="30" height="30"></button>
-                          
-                        </form>
-                        </td>
-                        @endcan
-              </tr>
-
-
-
+                <td class="text-center">{{$productos->nombre}}</td>
+                <td>{{$productos->precio}}</td>
+                <td  class="text-center">{{$productos->stock}}</td>
+               @can('veradmin')
+              <td><a href="/productos/edit/{{$productos->id}}" ><img src="https://cdn-icons-png.flaticon.com/512/588/588395.png" width="30" height="30"></a></td>
+              <td> <form action="/productos/{{$productos->id}}" class="formulario-eliminar" method="POST">
+                @csrf
+                @method('delete')
+              <button class="bg-transparent" style="border:none;" type=submit  onclick="return elimina()"> <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="30" height="30"></button>
+              </form>
+               </td>
+                @endcan
+               </tr>
               @endforeach
-            
+          </tbody>
   </table>
 
   @can('veradmin')
