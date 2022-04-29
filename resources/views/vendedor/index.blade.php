@@ -64,7 +64,6 @@ $(document).ready(function() {
 <!-- ======= Header ======= -->
 <header id="header">
   <div class="d-flex flex-column">
-
     <div class="profile">
       <br>
     <a class=" text-light" href="/"><h1>MercaAqui</h1></a>
