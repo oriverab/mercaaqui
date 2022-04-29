@@ -118,7 +118,7 @@ $(document).ready(function() {
 
 <table id="ExportDataTable" class="table table-striped table-hover table-bordered" cellspacing="0" width="100%">
 	<thead>
-		<tr>
+  <tr class="text-center"> 
 			<th>Nombre</th>
 			<th>Cedula</th>
 			<th>Email </th>
@@ -130,7 +130,7 @@ $(document).ready(function() {
 	</thead>
   <tbody>
     @foreach($vendedor as $vendedor)
-      <tr>
+    <tr class="text-center"> 
         <td>{{$vendedor->nombre}}</td>
         <td>{{$vendedor->cedula}}</td>
         <td>{{$vendedor->email}}</td>
