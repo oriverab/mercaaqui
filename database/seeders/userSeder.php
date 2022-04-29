@@ -13,15 +13,15 @@ class userSeder extends Seeder
      */
     public function run()
     {
-        User::create(['name'=>'Milton','email'=>'daniel@gmail.com','password'=>bcrypt('123456789') ])->assignRole('administrador');
-        User::create(['name'=>'Milton','email'=>'cristian@gmail.com','password'=>bcrypt('123456789') ])->assignRole('administrador');
-        User::create(['name'=>'Milton','email'=>'orlando@gmail.com','password'=>bcrypt('123456789') ])->assignRole('administrador');
+        User::create(['name'=>'Daniel','email'=>'daniel@gmail.com','password'=>bcrypt('123456789') ])->assignRole('administrador');
+        User::create(['name'=>'Cristian','email'=>'cristian@gmail.com','password'=>bcrypt('123456789') ])->assignRole('administrador');
+        User::create(['name'=>'Orlando','email'=>'orlando@gmail.com','password'=>bcrypt('123456789') ])->assignRole('administrador');
         
 
 
 
-        User::create(['name'=>'Cristian','email'=>'milton123@gmail.com','password'=>bcrypt('123456789') ])->assignRole('vendedor');
-        User::create(['name'=>'orlando','email'=>'orlandoxD@gmail.com','password'=>bcrypt('123456789') ])->assignRole('vendedor');
+        User::create(['name'=>'benito','email'=>'milton123@gmail.com','password'=>bcrypt('123456789') ])->assignRole('vendedor');
+        User::create(['name'=>'alfredo','email'=>'orlandoxD@gmail.com','password'=>bcrypt('123456789') ])->assignRole('vendedor');
 
         user::factory(5)->create();
     }
