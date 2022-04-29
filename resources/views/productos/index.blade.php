@@ -109,7 +109,7 @@
                 </tr>
               @foreach($productos as $productos)
               <tr>
-                <td> <img src="img/productos/{{$productos->img}}" alt="" width="50" height="50"></td>
+                <td> <img src="img/productos/{{$productos->img}}" alt="" width="70" height="70" class="bg-transparent"></td>
               <td class="text-center">{{$productos->nombre}}</td>
               <td>{{$productos->precio}}</td>
               <td  class="text-center">{{$productos->stock}}</td>
