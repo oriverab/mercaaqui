@@ -135,7 +135,6 @@
         <tbody>
               @foreach($productos as $productos)
               <tr>
-<<<<<<< HEAD
                 <td> <img src="img/productos/{{$productos->img}}" alt="" width="50" height="50"></td>
                 <td class="text-center">{{$productos->nombre}}</td>
                 <td>{{$productos->precio}}</td>
@@ -150,31 +149,8 @@
                </td>
                 @endcan
                </tr>
-=======
-                <td> <img src="img/productos/{{$productos->img}}" alt="" width="70" height="70" class="bg-transparent"></td>
-              <td class="text-center">{{$productos->nombre}}</td>
-              <td>{{$productos->precio}}</td>
-              <td  class="text-center">{{$productos->stock}}</td>
-          @can('veradmin')    <td> <i href="/productos/edit/{{$productos->id}}"> </i>
-            <img src="https://image.flaticon.com/icons/png/512/3786/3786276.png" width="15" height="15">
-             </td>
-           @endcan  
-             @can('veradmin')
-<td><a href="/productos/edit/{{$productos->id}}" ><img src="https://cdn-icons-png.flaticon.com/512/588/588395.png" width="30" height="30"></a></td>
-
-<td> <form action="/productos/{{$productos->id}}" class="formulario-eliminar" method="POST">
-                           @csrf
-                           @method('delete')
-                           <button class="bg-transparent" style="border:none;" type=submit  onclick="return elimina()"> <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" width="30" height="30"></button>
-                          
-                        </form>
-                        </td>
-                        @endcan
+             
               </tr>
-
-
-
->>>>>>> 6c62eb898483ec2d3dadcf3b9577540fc382b9c2
               @endforeach
           </tbody>
   </table>
