@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
-
+<head>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+</head>
 <body class="body">
 <style>
     .body{
