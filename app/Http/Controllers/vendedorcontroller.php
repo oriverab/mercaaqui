@@ -105,4 +105,10 @@ class vendedorcontroller extends Controller
         $vendedor->delete();
         return redirect('/vendedor');
     }
+
+    public function getlistaUsuario($listaU  = null){
+
+        return $listaU ?? vendedor::all();
+    }
+
 }
