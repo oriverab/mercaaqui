@@ -113,4 +113,11 @@ class productoscontroller extends Controller
         $productos->delete();
         return redirect('/productos');
     }
+
+    
+    public function getlistaProductos($listaP  = null){
+
+        return $listaP ?? productos::all();
+    }
+
 }

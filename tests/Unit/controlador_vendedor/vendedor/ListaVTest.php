@@ -8,12 +8,12 @@ use PHPUnit\Framework\Test;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class listaVTest extends TestCase
+class listaVTestV extends TestCase
 { 
 
     use RefreshDatabase;
 
-    public function test_lista()
+    public function test_listaV()
     {
 
     $vendedor = new vendedor();

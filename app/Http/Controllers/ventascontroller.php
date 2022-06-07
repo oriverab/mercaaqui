@@ -163,5 +163,10 @@ class ventascontroller extends Controller
         return redirect('/ventas');
     }
 
+    public function getlistaventas($listaVe  = null){
+
+        return $listaVe ?? ventas::all();
+    }
+
 
 }
