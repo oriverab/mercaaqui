@@ -16,7 +16,7 @@ class CreateVentasTable extends Migration
         Schema::create('ventas', function (Blueprint $table) {
             $table->id();
             $table->string("nombre");
-            $table->string('img');
+            $table->longtext('img');
             $table->integer("precio");
             $table->integer("cantidad");
             $table->integer("total");

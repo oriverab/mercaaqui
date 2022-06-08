@@ -36,15 +36,15 @@ class productoscontroller extends Controller
 
     {    
         $nuevo=new productos ();
-        $imagen=$request->file('img');
-        $nombreimg=time().'.'.$imagen->getClientOriginalExtension();
-        $destino=public_path('img/productos');
-        $request->img->move($destino, $nombreimg);
-        $nuevo->img=$nombreimg;
+        //$imagen=$request->file('img');
+        //$nombreimg=time().'.'.$imagen->getClientOriginalExtension();
+        //$destino=public_path('img/productos');
+        //$request->img->move($destino, $nombreimg);
+        $nuevo->img=$request->get("img");
         $nuevo->nombre=$request->get("nombre");
         $nuevo->precio=$request->get("precio");
         $nuevo->stock=$request->get("stock");
-        
+    
         $nuevo->save();
     
           return redirect('/productos/');
@@ -88,14 +88,15 @@ class productoscontroller extends Controller
         $productos->nombre=$request->get("nombre");
         $productos->precio=$request->get("precio");
         $productos->stock=$request->get("stock");
-        if($request->file('img') !==null){
+        $productos->img=$request->get("img");
+        // if($request->file('img') !==null){
             
-            $imagen=$request->file('img');
-            $nombreimg=time().'.'.$imagen->getClientOriginalExtension();
-            $destino=public_path('img/productos');
-            $request->img->move($destino, $nombreimg);
-            $productos->img=$nombreimg;
-        };
+        //     $imagen=$request->file('img');
+        //     $nombreimg=time().'.'.$imagen->getClientOriginalExtension();
+        //     $destino=public_path('img/productos');
+        //     $request->img->move($destino, $nombreimg);
+        //     $productos->img=$nombreimg;
+        // };
         $productos->save();
   
         return redirect('/productos');

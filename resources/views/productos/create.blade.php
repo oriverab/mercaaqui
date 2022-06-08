@@ -27,7 +27,7 @@
       <input type="text" class="form-control" name="stock" placeholder="Ingresar la cantidad de productos">
     <br>
     <label for="imagen">Imagen:</label>
-      <input type="file" class="form-control" name="img">
+      <input type="text" class="form-control" name="img">
            
             </div>
 

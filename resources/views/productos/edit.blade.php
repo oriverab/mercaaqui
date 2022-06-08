@@ -4,7 +4,7 @@
   <div class="container-fluid h-custom " >
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="{{asset('img/productos/' .$productos->img)}}" class="img-fluid" width="500px" height="150px"  class="bg-transparent">
+        <img src="{{$productos->img}}" class="img-fluid" width="500px" height="150px"  class="bg-transparent">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-6 offset-xl-1">
      
@@ -25,7 +25,7 @@
     <label for="inputEmail3">stock</label>
     <input type="text" class="form-control" name="stock" value="{{$productos->stock}}" placeholder="Ingresar la cantidad de productos"> 
     <label for="imagen">Imagen:</label>
-      <input type="file" class="form-control" name="img">
+      <input type="text" class="form-control" name="img" value="{{$productos->img}}">
      </div>
              <div class="text-center text-lg-start mt-4 pt-2">
            
