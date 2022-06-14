@@ -121,4 +121,62 @@ class productoscontroller extends Controller
         return $listaP ?? productos::all();
     }
 
+
+    public function createP($request = null, $flag_test = false)
+    {
+        $productos = new productos();
+        if (isset($request)) {
+            $productos->nombre = $request->get('nombre');
+            $productos->precio = $request->get('precio');
+            $productos->tipo = $request->get('stock');
+            $productos->imagen = $request->get('img');
+        } elseif ($flag_test) {
+            $productos->id = 1;
+            $productos->nombre = 'awita';
+            $productos->precio = '2000';
+            $productos->stock = '150';
+        }
+        return $productos;
+    }
+
+    /**
+     * Return the product from its id or generates one
+     * @param $id of the Product
+     * @param $flag_test
+     * @return Product $product
+     */
+    public function getProductosId($id = null, $flag_test = false)
+    {
+        if (isset($id)) {
+            return productos::find($id);
+        } elseif ($flag_test) {
+           return $this->createP(null, $flag_test);
+        }
+    }
+
+    /**
+     * Updates the product from the request or generates one
+     * @param \Illuminate\Http\Request  $request
+     * @param $id of the Product
+     * @param $flag_test
+     * @return Product $product
+     */
+    public function updateProductosId($request, $id, $flag_test = false)
+    {
+        if ($request !== null) {
+            $productosUpdt = $this->getProductosId($id);
+            $productosUpdt->nombre = $request->get('nombre');
+            $productosUpdt->precio = $request->get('precio');
+            $productosUpdt->tipo = $request->get('stock');
+            $productosUpdt->imagen = $request->get('img');
+        }elseif ($flag_test) {
+            $productoUpdt = $this->getProductosId(null, $flag_test);
+            $productosUpdt = $this->getProductosId(null, $flag_test);
+            $productosUpdt->nombre = 'arroz';
+            $productosUpdt->precio = '2000';
+            $productosUpdt->stock = '200';
+        }
+        return $productosUpdt;
+    }
+
 }

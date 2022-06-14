@@ -18,7 +18,7 @@ class listaVTestVe extends TestCase
 
     $ventas = new ventas();
     $ventas -> id = 1; 
-    $ventas -> nombre = 'Cristian Bolanos';
+    $ventas -> nombre = 'milton';
     $ventas -> img = 1000323136;
     $ventas -> precio = 1001;
     $ventas -> cantidad = 100;
@@ -32,4 +32,3 @@ class listaVTestVe extends TestCase
     $this->assertSame($listaVe, $list );
     }
 }
-

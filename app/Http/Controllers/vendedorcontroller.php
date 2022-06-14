@@ -110,5 +110,54 @@ class vendedorcontroller extends Controller
 
         return $listaU ?? vendedor::all();
     }
+  
+    public function createv($request = null, $flag_test = false)
+    {
+        $vendedor = new Vendedor();
+        if (isset($request)) {
+        $vendedor = new vendedor();
+        $vendedor->nombre=$request->get('nombre');
+        $vendedor->cedula=$request->get('cedula');
+        $vendedor->email=$request->get('email');
+        $vendedor->telefono=$request->get('telefono');
+        } elseif ($flag_test) {
+            $vendedor -> id = 1; 
+            $vendedor -> nombre = 'milton';
+            $vendedor -> cedula = '1000323136';
+            $vendedor -> email = 'nada@gmail.com';
+            $vendedor -> telefono = '123443';
+        }
+        return $vendedor;
+    }
+
+    public function updateVendedorId($request, $id, $flag_test = false)
+    {
+        if ($request !== null) {
+            $vendedorUpdt = $this->getVendedorId($id);
+            $vendedorUpdt->nombre=$request->get('nombre');
+            $vendedorUpdt->cedula=$request->get('cedula');
+            $vendedorUpdt->email=$request->get('email');
+            $vendedorUpdt->telefono=$request->get('telefono');
+        }if ($flag_test) {
+            $vendedorUpdt = $this->getVendedorId(null, $flag_test);
+            $vendedorUpdt -> id = 1; 
+            $vendedorUpdt -> nombre = 'milton';
+            $vendedorUpdt -> cedula = '1000323136';
+            $vendedorUpdt -> email = 'nada@gmail.com';
+            $vendedorUpdt -> telefono = '123443';
+        }
+        return $vendedorUpdt;
+    }
+
+
+    public function getVendedorId($id = null, $flag_test = false)
+    {
+        if (isset($id)) {
+            return vendedor::find($id);
+        } elseif ($flag_test) {
+           return $this->createv(null, $flag_test);
+        }
+    }
+  
 
 }

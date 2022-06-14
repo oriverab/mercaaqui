@@ -68,9 +68,12 @@ class ventascontroller extends Controller
             $nuevo->cantidad=$request->get("cantidad");
             $nuevo->vendedor= Auth::user()->name;
             $descuento=DB::table('productos')->where('id',$producto)->update(array('stock' =>$cantidadtabla));
-           
             $nuevo->save();
-    
+            if($cantidadtabla <= $cantidadtabla);else{
+
+            }
+        
+
             return redirect('/ventas/');
         
     }

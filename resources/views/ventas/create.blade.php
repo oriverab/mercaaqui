@@ -23,10 +23,10 @@
             @endforeach
             </select>
   <div class="form-group">
-  <!-- <label for="inputEmail3">precio del producto</label>
-  <input type="text" class="form-control" name="precio" placeholder="Ingresar precio"> -->
   <label for="inputEmail3">cantidad</label>
-  <input type="text" class="form-control" name="cantidad" placeholder="Ingresar la cantidad de productos">
+  <input type="number" class="form-control" name="cantidad" placeholder="Ingresar la cantidad de productos" required min="1" max="{{$productos->stock}}">
+  <p class="text-muted mb-0 py-0">
+                                                    </p>
   <p>nombre de el vendedor</p>
   @php
   $nombre = Auth::user()->name
