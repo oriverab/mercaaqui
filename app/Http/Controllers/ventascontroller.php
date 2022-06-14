@@ -47,10 +47,16 @@ class ventascontroller extends Controller
      */
     public function store(Request $request)
     {
-        $nuevo2=$request->get("nombre");
-        $nuevo1=$request->get("cantidad");
-        $nuevo1=intval($nuevo1) ;
+        $producto = $request ->get('nombre');
+        $resta = $request ->get('cantidad');
+        $resta=intval($resta);  
+        $sql1 = DB::select("SELECT precio from productos where nombre= '$producto'");
+        $sql7 = DB::select("SELECT id from productos where nombre = '$producto'");
+        $sql2 = DB::select("SELECT nombre from productos where nombre= '$producto'");
+        $sql6 = DB::select("SELECT img from productos where nombre = '$producto'");
+        $sql5 = DB::select("SELECT stock from productos where nombre = '$producto'");
         
+<<<<<<< HEAD
         $sql3 = DB::select("SELECT precio FROM productos WHERE nombre='$nuevo2' ");
         $consultaid = DB::select("SELECT id FROM productos WHERE nombre='$nuevo2' ");
         $consultaimg = DB::select("SELECT img FROM productos WHERE nombre='$nuevo2' ");
@@ -75,6 +81,32 @@ class ventascontroller extends Controller
         
 
             return redirect('/ventas/');
+=======
+        
+       if($resta <= ($sql5[0]->stock)){
+       $nuevoproducto = new ventas();
+       $nuevoproducto->nombre=$request->get("nombre");
+       $nuevoproducto->productos_id=$sql7[0]->id;
+       $productos = $sql7[0]->id;
+       $nuevoproducto->img=$sql6[0]->img;
+       //$descuento=DB::table('productos')->where('id',$sql7)->update(array('stock' =>$sql5));
+       $cantidadTabla=$sql5;
+       $cantidadTabla=intval($sql5[0]->stock - $resta);
+       $nuevoproducto->precio=$sql1[0]->precio;
+       $nuevoproducto->cantidad=$request->get('cantidad');
+       $nuevoproducto->total=$request->get('cantidad')*$sql1[0]->precio;
+       $nuevoproducto->vendedor=Auth::user()->name;
+       
+       $descuento=DB::table('productos')->where('id',$productos)->update(array('stock' =>$cantidadTabla));
+       $nuevoproducto->save();
+       return redirect('/ventas');
+    }else{
+        echo'<script type="text/javascript">
+        alert("no hay stock");
+        window.location.href="/ventas";
+        </script>';
+    }
+>>>>>>> a9a37d5cd9b071a184918f0642b7a780f929d33c
         
     }
        
@@ -122,35 +154,31 @@ class ventascontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $nuevo2=$request->get("nombre");
-        $nuevo1=$request->get("cantidad");
-        $nuevo1=intval($nuevo1) ;
-        
-        $sql3 = DB::select("SELECT precio FROM productos WHERE nombre='$nuevo2' ");
-        $consultaid = DB::select("SELECT id FROM productos WHERE nombre='$nuevo2' ");
-        $consultaimg = DB::select("SELECT img FROM productos WHERE nombre='$nuevo2' ");
-      
+        $producto = $request ->get('productos_id');
+        $resta =$request -> get('cantidad');
+        $sql1 = DB::select("SELECT precio from producto where id= $producto");
+        $sql2 = DB::select("SELECT nombre from productos where id= $producto");
+        $sql5 = DB::select("SELECT stock from productos where id = $productos");
+        $sql6 = DB::select("SELECT img from productos where id = $productos");
+        $sql7 = DB::select("SELECT id from productos where id = $productos");
 
-        $nuevo2=$request->get("nombre");
-        $sql3 = DB::select("SELECT precio FROM productos WHERE nombre='$nuevo2' ");
-        $ventas= ventas::find($id);
-        $ventas->nombre=$request->get("nombre");
-        $ventas->productos_id= $producto=$consultaid[0]->id;
-        $producto=$consultaid[0]->id;
-        $ventas->img=$consultaimg[0]->img;
-        $cantidadtabla=DB::select("SELECT stock FROM productos WHERE id= '$producto' ");
-        $cantidadtabla=intval($cantidadtabla[0]->stock - $nuevo1);
-        $ventas->precio=$sql3[0]->precio;
-        $ventas->total=$sql3[0]->precio*$request->get('cantidad');
-        $ventas->cantidad=$request->get("cantidad");
-        $ventas->vendedor= Auth::user()->name;
-        $descuento=DB::table('productos')->where('id',$producto)->update(array('stock' =>$cantidadtabla));
-        $ventas->save();
-  
-        return redirect('/ventas');
-
-     
+       if($resta <= ($sql5[0]->cantidad)){
+       $nuevoproducto = new ventas();
+       $nuevoproducto->producto_id=$sql7->id;
+       $nuevoproducto->nombre=$sql2[0]->nombre;
+       $nuevoproducto->img=$sql6[0]->img;
+       $nuevoproducto->precio=$sql1[0]->precio;
+       $nuevoproducto->cantidad=$request->get('cantidad');
+       $nuevoproducto->total=$request->get('cantidad')*$sql1[0]->precio;
+       $nuevoproducto->save();
+       return redirect('/ventas');
+    }else{
+        echo'<script type="text/javascript">
+        alert("no hay stock");
+        window.location.href="/ventas";
+        </script>';
     }
+}
      
 
     /**
