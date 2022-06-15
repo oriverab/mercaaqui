@@ -21,10 +21,10 @@
   <input type="text" class="form-control"  id="nombre" name="nombre" placeholder="Ingresar Nombre">   
   <label for="inputEmail3">Cedula</label>    
     <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Ingresar Cedula">   
-    <label for="inputEmail3">correo hola</label>
+    <label for="inputEmail3">correo</label>
     <input type="text" class="form-control" id="email" name="email" placeholder="Ingresar Email"> 
-    <label for="inputEmail3">Telefono</label>
-    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingresar Telefono">
+    <label for="inputEmail3">Telefono fijo</label>
+    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingresar Telefono" max="8">
            
             </div>
 
