@@ -24,8 +24,8 @@
     <input type="text" class="form-control" id="cedula" name="cedula" value="{{$vendedor->cedula}}" placeholder="Ingresar Cedula">
     <label for="inputEmail3" >Email</label>
     <input type="text" class="form-control" id="email" name="email" value="{{$vendedor->email}}" placeholder="Ingresar Email">
-    <label for="inputEmail3">Telefono</label>
-      <input type="text" class="form-control" id="telefono" name="telefono"  value="{{$vendedor->telefono}}"placeholder="Ingresar Telefono">          
+    <label for="inputEmail3">Telefono fijo</label>
+      <input type="text" class="form-control" id="telefono" name="telefono"  value="{{$vendedor->telefono}}"placeholder="Ingresar Telefono" max="8">          
             </div>     
               <div class="text-center text-lg-start mt-4 pt-2">
            

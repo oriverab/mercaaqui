@@ -127,6 +127,7 @@ class ventascontroller extends Controller
      */
     public function update(Request $request, $id)
     {
+<<<<<<< HEAD
         $producto = $request ->get('productos_id');
         $resta =$request -> get('cantidad');
         $sql1 = DB::select("SELECT precio from producto where id= $producto");
@@ -134,23 +135,37 @@ class ventascontroller extends Controller
         $sql5 = DB::select("SELECT stock from productos where id = $producto");
         $sql6 = DB::select("SELECT img from productos where id = $producto");
         $sql7 = DB::select("SELECT id from productos where id = $producto");
+=======
+        $editproducto=ventas::find($id);    
+        $precio=$editproducto->precio;
+        $Nombre=$editproducto->Nombre;
+        $productos_id=$editproducto->productos_id;
+        $cantidad_actual=($editproducto->cantidad); 
+        $cantidad_def=intval($request->get('cantidad')); // cantidad del input
+        $sql5= DB::select("SELECT stock FROM productos WHERE id = $productos_id");
+        
+        if ($cantidad_def <=($sql5[0]->stock + $cantidad_actual)) {
+            $sql18 = DB::select("update productos set stock = (stock + $cantidad_actual) where id = $productos_id");
+            $editproducto->Cantidad=$request->get('cantidad');
+            $sql19 = DB::select("update productos set stock = (stock - $cantidad_def) where id = $productos_id");
+            $editproducto->total=$request->get('cantidad')*$precio;
+            $editproducto->save();
+            return redirect('/ventas');
+        }else{
+                // dd('soy la gaver');
+                echo'<script>alert("No hay stock de '. $Nombre .' ");window.location.href="/ventas";</script>';
+                
+            }
 
-       if($resta <= ($sql5[0]->cantidad)){
-       $nuevoproducto = new ventas();
-       $nuevoproducto->producto_id=$sql7->id;
-       $nuevoproducto->nombre=$sql2[0]->nombre;
-       $nuevoproducto->img=$sql6[0]->img;
-       $nuevoproducto->precio=$sql1[0]->precio;
-       $nuevoproducto->cantidad=$request->get('cantidad');
-       $nuevoproducto->total=$request->get('cantidad')*$sql1[0]->precio;
-       $nuevoproducto->save();
-       return redirect('/ventas');
-    }else{
-        echo'<script type="text/javascript">
-        alert("no hay stock");
-        window.location.href="/ventas";
-        </script>';
-    }
+       
+    
+   ##----------------------------------------------------------------------
+        
+       
+
+
+>>>>>>> e7236d748063571f4eefc0eccc46b0f030b4d75e
+
 }
      
 
