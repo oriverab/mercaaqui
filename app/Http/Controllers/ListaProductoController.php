@@ -4,7 +4,7 @@ use app\Models\productos;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class ListaProducto extends Controller
+class ListaProductoController extends Controller
 {
     public function ListaProducto ()
     {

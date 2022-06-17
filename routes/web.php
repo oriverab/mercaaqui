@@ -5,7 +5,8 @@ use App\Http\Controllers\productoscontroller;
 use App\Http\Controllers\vendedorcontroller;
 use App\Http\Controllers\ventascontroller;
 use App\Http\Controllers\Admincontroller;
-use App\Http\Controllers\ListaProducto;
+use App\Http\Controllers\ListaProductoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ Route::resource('/admin', Admincontroller::class);
 
 Route::resource('/ventas', ventascontroller::class);
 
-Route::get('/ListaProductos', [App\Http\Controllers\ListaProducto::class, 'ListaProductos'])->name('ListaProductos');
+Route::get('/ListaProductos', [App\Http\Controllers\ListaProductoController::class, 'ListaProducto'])->name('ListaProducto');
 
 
 Auth::routes(); 
