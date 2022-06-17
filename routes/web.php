@@ -5,6 +5,7 @@ use App\Http\Controllers\productoscontroller;
 use App\Http\Controllers\vendedorcontroller;
 use App\Http\Controllers\ventascontroller;
 use App\Http\Controllers\Admincontroller;
+use App\Http\Controllers\ListaProducto;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/admin', Admincontroller::class);
 
 Route::resource('/ventas', ventascontroller::class);
+
+Route::get('/ListaProductos', [App\Http\Controllers\ListaProducto::class, 'ListaProductos'])->name('ListaProductos');
+
 
 Auth::routes(); 
 

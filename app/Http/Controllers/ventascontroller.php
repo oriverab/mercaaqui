@@ -56,32 +56,6 @@ class ventascontroller extends Controller
         $sql6 = DB::select("SELECT img from productos where nombre = '$producto'");
         $sql5 = DB::select("SELECT stock from productos where nombre = '$producto'");
         
-<<<<<<< HEAD
-        $sql3 = DB::select("SELECT precio FROM productos WHERE nombre='$nuevo2' ");
-        $consultaid = DB::select("SELECT id FROM productos WHERE nombre='$nuevo2' ");
-        $consultaimg = DB::select("SELECT img FROM productos WHERE nombre='$nuevo2' ");
-      
-              
-            $nuevo=new ventas ();
-            $nuevo->nombre=$request->get("nombre");
-            $nuevo->productos_id=$consultaid[0]->id;
-            $producto=$consultaid[0]->id;
-            $nuevo->img=$consultaimg[0]->img;
-            $cantidadtabla=DB::select("SELECT stock FROM productos WHERE id= '$producto' ");
-            $cantidadtabla=intval($cantidadtabla[0]->stock - $nuevo1);
-            $nuevo->precio=$sql3[0]->precio;
-            $nuevo->total=$sql3[0]->precio*$request->get('cantidad');
-            $nuevo->cantidad=$request->get("cantidad");
-            $nuevo->vendedor= Auth::user()->name;
-            $descuento=DB::table('productos')->where('id',$producto)->update(array('stock' =>$cantidadtabla));
-            $nuevo->save();
-            if($cantidadtabla <= $cantidadtabla);else{
-
-            }
-        
-
-            return redirect('/ventas/');
-=======
         
        if($resta <= ($sql5[0]->stock)){
        $nuevoproducto = new ventas();
@@ -106,7 +80,6 @@ class ventascontroller extends Controller
         window.location.href="/ventas";
         </script>';
     }
->>>>>>> a9a37d5cd9b071a184918f0642b7a780f929d33c
         
     }
        
@@ -158,9 +131,9 @@ class ventascontroller extends Controller
         $resta =$request -> get('cantidad');
         $sql1 = DB::select("SELECT precio from producto where id= $producto");
         $sql2 = DB::select("SELECT nombre from productos where id= $producto");
-        $sql5 = DB::select("SELECT stock from productos where id = $productos");
-        $sql6 = DB::select("SELECT img from productos where id = $productos");
-        $sql7 = DB::select("SELECT id from productos where id = $productos");
+        $sql5 = DB::select("SELECT stock from productos where id = $producto");
+        $sql6 = DB::select("SELECT img from productos where id = $producto");
+        $sql7 = DB::select("SELECT id from productos where id = $producto");
 
        if($resta <= ($sql5[0]->cantidad)){
        $nuevoproducto = new ventas();
