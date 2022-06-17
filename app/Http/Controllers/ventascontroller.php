@@ -127,15 +127,6 @@ class ventascontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-<<<<<<< HEAD
-        $producto = $request ->get('productos_id');
-        $resta =$request -> get('cantidad');
-        $sql1 = DB::select("SELECT precio from producto where id= $producto");
-        $sql2 = DB::select("SELECT nombre from productos where id= $producto");
-        $sql5 = DB::select("SELECT stock from productos where id = $producto");
-        $sql6 = DB::select("SELECT img from productos where id = $producto");
-        $sql7 = DB::select("SELECT id from productos where id = $producto");
-=======
         $editproducto=ventas::find($id);    
         $precio=$editproducto->precio;
         $Nombre=$editproducto->Nombre;
@@ -164,7 +155,6 @@ class ventascontroller extends Controller
        
 
 
->>>>>>> e7236d748063571f4eefc0eccc46b0f030b4d75e
 
 }
      

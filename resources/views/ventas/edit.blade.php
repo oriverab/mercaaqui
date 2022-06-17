@@ -18,7 +18,6 @@
           <div class="form-group">
               <p>nombre de producto</p>
             <select class="form-control placeholder" id="nombre" name="nombre"> 
-            <option value="" selected disabled>Please select</option>
             @foreach($productos as $productos)
             <option value="{{$productos->nombre}}">{{$productos->nombre}}</option>            
             @endforeach
@@ -31,7 +30,7 @@
   <!-- <label for="inputEmail3">precio del producto</label>
   <input type="text" class="form-control" name="precio" placeholder="Ingresar precio"> -->
   <label for="inputEmail3">cantidad</label>
-  <input type="text" class="form-control" name="cantidad" placeholder="Ingresar la cantidad de productos">
+  <input type="text" class="form-control" name="cantidad" placeholder="Ingresar la cantidad de productos" required>
   <label name="vendedor" id="vendedor" name="vendedor">nombre de el vendedor</label>
   <input type="text" class="form-control" name="vendedor"  readonly value="{{$ventas->vendedor}}">
 </div>
