@@ -111,7 +111,7 @@
         </div>
 </div>
 
-  <main id="main">
+  <main id="main" class="table table-responsive table-striped">
 
   <table id="ExportDataTable" class="table table-striped table-hover table-bordered" cellspacing="0" width="100%">
         <thead>

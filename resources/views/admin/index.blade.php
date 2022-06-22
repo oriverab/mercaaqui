@@ -56,8 +56,9 @@
 
     <div class="profile">
       <br>
-    <a class=" text-light" href="/admin"><h1>MercaAqui</h1></a>
-    <a href="/admin"> <img src="{{asset('img/todo/logitosuper.jpg')}}"></a>
+    <a class=" text-light" href="../admin"><h1>MercaAqui</h1></a>
+    <a href="../admin"> <img src="{{asset('img/todo/logitosuper.jpg')}}"></a>
+    
                           <div>
                             <h4 class="text-center">
                             @guest    

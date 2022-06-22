@@ -29,7 +29,7 @@
   <div id="app posicion" class="posicion1">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container" style="z-index: 1200;">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/admin') }}">
                 <img src="https://cdn-icons-png.flaticon.com/512/3082/3082031.png" width="40" height="40">               
     
                 {{ config('app.name', 'MercaAqui') }}
@@ -42,7 +42,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                    <li class="nav-item">
+        <a class="nav-link" href="/vendedor">-vendedor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/productos">-productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ventas">-ventas</a>
+      </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

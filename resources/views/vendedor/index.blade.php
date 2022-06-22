@@ -112,7 +112,7 @@ $(document).ready(function() {
         </div>
 </div>
 
-  <main id="main">
+  <main id="main"  class="table table-responsive table-striped">
 <br>
 
 
