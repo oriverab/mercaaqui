@@ -44,14 +44,14 @@
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                     @can('veradmin')
-        <a class="nav-link" href="/vendedor"><img  src="{{asset('img/todo/vendedor.jpg')}}" width="25" height="25"></a>
+        <a class="nav-link" href="/vendedor"><img  src="{{asset('img/todo/vendedor.jpg')}}" width="25" height="25"> vendedor</a>
         @endcan
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/productos"> <img src="https://cdn-icons-png.flaticon.com/512/1524/1524855.png"width="25" height="25"></a>
+        <a class="nav-link" href="/productos"> <img src="https://cdn-icons-png.flaticon.com/512/1524/1524855.png"width="25" height="25">productos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ventas"><img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"width="25" height="25"></a>
+        <a class="nav-link" href="/ventas"><img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"width="25" height="25">ventas</a>
       </li>
                     </ul>
 
