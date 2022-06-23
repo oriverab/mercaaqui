@@ -43,13 +43,15 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-        <a class="nav-link" href="/vendedor">-vendedor</a>
+                    @can('veradmin')
+        <a class="nav-link" href="/vendedor"><img  src="{{asset('img/todo/vendedor.jpg')}}" width="25" height="25"></a>
+        @endcan
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/productos">-productos</a>
+        <a class="nav-link" href="/productos"> <img src="https://cdn-icons-png.flaticon.com/512/1524/1524855.png"width="25" height="25"></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ventas">-ventas</a>
+        <a class="nav-link" href="/ventas"><img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"width="25" height="25"></a>
       </li>
                     </ul>
 
