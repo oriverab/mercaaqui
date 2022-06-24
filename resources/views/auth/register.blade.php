@@ -7,7 +7,7 @@
     <div class="row justify-content-center ">
         <div class="col-md-6">
             <div class="card ">
-                <div class="card-header text-center"><h1>{{ __('Registrarse') }}<img src="https://image.flaticon.com/icons/png/512/3082/3082031.png" width="40" height="40"></h1></div>
+                <div class="card-header text-center"><h1>{{ __('Registrarse') }}<img src="{{asset('img/todo/carrito.jpg')}}" width="40" height="40"></h1></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
