@@ -53,6 +53,26 @@
       <li class="nav-item">
         <a class="nav-link" href="/ventas"><img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"width="25" height="25">ventas</a>
       </li>
+      <p></p>
+      <li class="nav-item"> 
+           @guest    
+                      @else
+                                  <a href="{{ route('logout') }}"
+                                     onclick="event.preventDefault();
+                                                   document.getElementById('logout-form').submit();">
+                                                       <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png"width="25" height="25">
+                                      {{ __('Logout') }}
+                                  
+                                  </a>
+
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                      @csrf
+                                  </form>
+                           
+                          </li>
+                          </h4>
+                      @endguest
+      </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

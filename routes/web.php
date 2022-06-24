@@ -19,10 +19,10 @@ use App\Http\Controllers\ListaProductoController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
+Route::get('/', function () {
+    return view('principal');
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/admin', Admincontroller::class);
